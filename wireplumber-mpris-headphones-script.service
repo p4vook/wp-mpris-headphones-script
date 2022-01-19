@@ -1,0 +1,12 @@
+[Unit]
+Description=Stop MPRIS players on headphones disconnect
+After=wireplumber.service
+BindsTo=wireplumber.service
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/wp-mpris-headphones-script
+Restart=on-failure
+
+[Install]
+WantedBy=wireplumber.service
